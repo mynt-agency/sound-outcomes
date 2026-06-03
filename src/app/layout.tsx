@@ -27,9 +27,9 @@ export const metadata: Metadata = {
   icons: { icon: "/assets/mark.svg" },
   metadataBase: new URL("https://soundoutcomes.com"),
   openGraph: {
-    title: "Sound Outcomes — Performance Audio Advertising Agency",
+    title: "Sound Outcomes: Performance Audio Advertising Agency",
     description:
-      "Audio advertising, engineered for outcomes, not impressions. Podcast, streaming, and AM/FM radio — planned, bought, and measured to the conversion.",
+      "Audio advertising, engineered for outcomes, not impressions. Podcast, streaming, and AM/FM radio: planned, bought, and measured to the conversion.",
     type: "website",
     url: "https://soundoutcomes.com",
   },

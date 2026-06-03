@@ -7,7 +7,7 @@ const ATTR_CAPS: { icon: IconName; t: string; d: string }[] = [
   {
     icon: "spark",
     t: "Magellan.ai partnership",
-    d: "Competitive podcast spend intelligence and detection — so we buy where the proven performance is.",
+    d: "Competitive podcast spend intelligence and detection, so we buy where the proven performance is.",
   },
   {
     icon: "layers",
@@ -17,7 +17,7 @@ const ATTR_CAPS: { icon: IconName; t: string; d: string }[] = [
   {
     icon: "target",
     t: "Causal attribution & incrementality",
-    d: "Geo-holdouts and matched-market tests that isolate true incremental lift — not correlation.",
+    d: "Geo-holdouts and matched-market tests that isolate true incremental lift, not correlation.",
   },
   {
     icon: "link",
@@ -36,7 +36,7 @@ export const Attribution = () => (
         </h2>
         <p className="lead">
           Audio&apos;s reputation problem is measurement. We solved for it first.
-          Sound Outcomes is built on rigorous, transparent attribution — so you
+          Sound Outcomes is built on rigorous, transparent attribution, so you
           know what&apos;s actually driving growth versus what&apos;s merely
           getting credit.
         </p>

@@ -38,7 +38,7 @@ export const Proof = () => (
             attribution test design, I can make high-stakes decisions with low
             uncertainty.&quot;
           </blockquote>
-          <cite>— Paul Baumgarthuber, CMO, LaserAway</cite>
+          <cite>Paul Baumgarthuber, CMO, LaserAway</cite>
         </div>
       </div>
       <p className="proof-roster">

@@ -35,7 +35,7 @@ export const Footer = () => (
         </div>
       </div>
       <div className="footer-bottom">
-        <p>© 2026 Sound Outcomes — a Mynt Agency brand. All rights reserved.</p>
+        <p>© 2026 Sound Outcomes, a Mynt Agency brand. All rights reserved.</p>
         <p>soundoutcomes.com</p>
       </div>
     </div>

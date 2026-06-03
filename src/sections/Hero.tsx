@@ -83,7 +83,7 @@ const HeroForm = () => {
       </Button>
       <p className="hf-fine">
         We&apos;ll map your audio opportunity, model the upside, and show you how
-        we&apos;d measure it — before you spend a dollar.
+        we&apos;d measure it before you spend a dollar.
       </p>
     </form>
   );
@@ -118,11 +118,10 @@ export const Hero = () => (
         </h1>
         <p className="lead">
           Sound Outcomes is the performance audio agency for brands that refuse to
-          fly blind. We plan, buy, and measure podcast, streaming, and AM/FM radio
-          — then prove exactly what each dollar drove.
+          fly blind. We plan, buy, and measure podcast, streaming, and AM/FM radio, then prove exactly what each dollar drove.
         </p>
         <p className="sub">
-          No vanity metrics. No black boxes. Just measurable revenue — from
+          No vanity metrics. No black boxes. Just measurable revenue, from
           programmatic audio to host-read sponsorships across 1,500+ shows, every
           placement bought for return and measured to the conversion.
         </p>

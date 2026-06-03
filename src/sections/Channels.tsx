@@ -7,7 +7,7 @@ const CHANNELS: { icon: IconName; name: string; blurb: string; tag: string }[] =
     icon: "mic",
     name: "Podcast advertising",
     blurb:
-      "90% host-read and host-endorsed ads across 1,500+ shows spanning business, health, news, comedy, and lifestyle. We handle show selection, rate negotiation, host coordination, read optimization, and reporting end to end — with competitive spend intelligence from Magellan.ai built in.",
+      "90% host-read and host-endorsed ads across 1,500+ shows spanning business, health, news, comedy, and lifestyle. We handle show selection, rate negotiation, host coordination, read optimization, and reporting end to end, with competitive spend intelligence from Magellan.ai built in.",
     tag: "1,500+ shows · host-read & DAI",
   },
   {
@@ -46,7 +46,7 @@ export const Channels = () => (
         <h2>Every audio channel that moves revenue.</h2>
         <p className="lead">
           We&apos;re channel-agnostic and outcome-obsessed. We put your budget
-          where the math works — across the full digital audio landscape and
+          where the math works, across the full digital audio landscape and
           traditional broadcast.
         </p>
       </div>
