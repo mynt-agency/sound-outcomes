@@ -1,17 +1,16 @@
 /**
  * HubSpot lead submission via the Forms Submission API.
  *
- * Configure these two PUBLIC values (safe to expose — they appear in every
- * HubSpot embed code) as environment variables, e.g. in Vercel:
- *   NEXT_PUBLIC_HUBSPOT_PORTAL_ID   your HubSpot Hub/Portal ID (a number)
- *   NEXT_PUBLIC_HUBSPOT_FORM_GUID   the form's GUID
- *
- * If they are not set, submitLead resolves without sending (so the
- * confirmation UX still works in local/preview), and logs a warning.
+ * Portal ID and Form GUID are PUBLIC values (they appear in any HubSpot embed
+ * code), so they're safe to ship in client code. They're hardcoded below, but
+ * can be overridden per-environment with NEXT_PUBLIC_HUBSPOT_PORTAL_ID /
+ * NEXT_PUBLIC_HUBSPOT_FORM_GUID if you ever point the forms elsewhere.
  */
 
-const PORTAL_ID = process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID;
-const FORM_GUID = process.env.NEXT_PUBLIC_HUBSPOT_FORM_GUID;
+const PORTAL_ID = process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID || "46811795";
+const FORM_GUID =
+  process.env.NEXT_PUBLIC_HUBSPOT_FORM_GUID ||
+  "e64b094b-3eec-42da-a82f-6e68aaa4848e";
 
 export type LeadInput = {
   name: string;
@@ -20,13 +19,6 @@ export type LeadInput = {
 };
 
 export async function submitLead({ name, company, email }: LeadInput): Promise<void> {
-  if (!PORTAL_ID || !FORM_GUID) {
-    console.warn(
-      "[hubspot] NEXT_PUBLIC_HUBSPOT_PORTAL_ID / NEXT_PUBLIC_HUBSPOT_FORM_GUID not set — lead was not sent."
-    );
-    return;
-  }
-
   // HubSpot's default contact has firstname/lastname; split the single name field.
   const trimmed = name.trim();
   const gap = trimmed.indexOf(" ");
