@@ -1,6 +1,7 @@
 import { Nav } from "@/sections/Nav";
 import { Hero } from "@/sections/Hero";
 import { LogoBanner } from "@/sections/LogoBanner";
+import { Testimonial } from "@/sections/Testimonial";
 import { Channels } from "@/sections/Channels";
 import { Attribution } from "@/sections/Attribution";
 import { Proof } from "@/sections/Proof";
@@ -13,6 +14,7 @@ export default function Home() {
       <Nav />
       <Hero />
       <LogoBanner />
+      <Testimonial />
       <Channels />
       <Attribution />
       <Proof />

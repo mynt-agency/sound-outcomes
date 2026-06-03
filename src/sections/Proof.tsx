@@ -1,5 +1,3 @@
-import { Icon } from "@/components/icons";
-import { Eyebrow } from "@/components/Eyebrow";
 import { Metric } from "@/components/Metric";
 
 const STATS: { v: string; u?: string; l: string }[] = [
@@ -15,7 +13,6 @@ export const Proof = () => (
   <section className="sec band-ink-deep" id="results">
     <div className="wrap">
       <div className="sec-head">
-        <Eyebrow on="dark">Backed by Mynt Agency</Eyebrow>
         <h2 style={{ color: "var(--paper-50)" }}>
           A decade of performance, now focused on audio.
         </h2>
@@ -29,17 +26,6 @@ export const Proof = () => (
         {STATS.map((s) => (
           <Metric key={s.l} value={s.v} unit={s.u} label={s.l} />
         ))}
-      </div>
-      <div className="quote">
-        <Icon name="quote" size={34} />
-        <div>
-          <blockquote>
-            &quot;With spot-level, real-time pixel tracking and rigorous advanced
-            attribution test design, I can make high-stakes decisions with low
-            uncertainty.&quot;
-          </blockquote>
-          <cite>Paul Baumgarthuber, CMO, LaserAway</cite>
-        </div>
       </div>
       <p className="proof-roster">
         Trusted by performance brands including LaserAway, DuckDuckGo, Rosetta

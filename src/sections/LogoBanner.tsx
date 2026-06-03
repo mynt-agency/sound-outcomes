@@ -11,9 +11,7 @@ const CLIENTS = [
 export const LogoBanner = () => (
   <section className="logo-banner">
     <div className="wrap">
-      <p className="lb-label">
-        Trusted by performance brands across the Mynt roster
-      </p>
+      <p className="lb-label">Trusted by industry leading brands</p>
       <div className="lb-row">
         {CLIENTS.map((c) => (
           <ClientLogo key={c} name={c} />

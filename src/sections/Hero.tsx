@@ -90,7 +90,6 @@ const HeroForm = () => {
 };
 
 const TRUST_ITEMS: { icon: IconName; t: string }[] = [
-  { icon: "shield", t: "Powered by Mynt Agency" },
   { icon: "trending", t: "$3.1B+ incremental revenue generated" },
   { icon: "target", t: "Advanced Attribution certified" },
   { icon: "handshake", t: "Partnered with Magellan.ai" },
@@ -118,7 +117,7 @@ export const Hero = () => (
         </h1>
         <p className="lead">
           Sound Outcomes is the performance audio agency for brands that refuse to
-          fly blind. We plan, buy, and measure podcast, streaming, and AM/FM radio, then prove exactly what each dollar drove.
+          fly blind. We plan, buy, and measure Podcast, Streaming, and AM/FM radio, then prove exactly what each dollar drove.
         </p>
         <p className="sub">
           No vanity metrics. No black boxes. Just measurable revenue, from

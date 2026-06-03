@@ -49,21 +49,30 @@
 .ts-item{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body);font-weight:500;font-size:14px;color:var(--ink-300)}
 .ts-item .so-ico{color:var(--amber-400);flex-shrink:0}
 
-/* ---------- client logo banner (light) ---------- */
-.logo-banner{background:var(--paper-50);padding:42px 0 46px;border-bottom:1px solid var(--paper-200)}
-.lb-label{font-family:var(--font-mono);font-weight:500;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--paper-500);text-align:center;margin:0 0 26px}
-.lb-row{display:flex;align-items:center;justify-content:center;gap:30px 56px;flex-wrap:wrap}
+/* ---------- client logo banner (light) — text sizes doubled ---------- */
+.logo-banner{background:var(--paper-50);padding:56px 0 60px}
+.lb-label{font-family:var(--font-mono);font-weight:500;font-size:22px;letter-spacing:.16em;text-transform:uppercase;color:var(--paper-500);text-align:center;margin:0 0 40px}
+.lb-row{display:flex;align-items:center;justify-content:center;gap:44px 72px;flex-wrap:wrap}
 .client-logo{display:inline-flex;align-items:center;color:var(--paper-400);transition:color var(--dur-base) var(--ease-out)}
 .client-logo:hover{color:var(--ink-800)}
 .cl-mark{line-height:1;white-space:nowrap}
-.cl-death{font-family:var(--font-display);font-weight:900;font-size:18px;letter-spacing:.02em;text-transform:uppercase}
-.cl-laser{font-family:var(--font-display);font-weight:500;font-size:23px;letter-spacing:-.02em}
+.cl-death{font-family:var(--font-display);font-weight:900;font-size:36px;letter-spacing:.02em;text-transform:uppercase}
+.cl-laser{font-family:var(--font-display);font-weight:500;font-size:46px;letter-spacing:-.02em}
 .cl-laser b{font-weight:800}
-.cl-oats{font-family:var(--font-body);font-weight:700;font-size:22px;letter-spacing:-.03em}
+.cl-oats{font-family:var(--font-body);font-weight:700;font-size:44px;letter-spacing:-.03em}
 .cl-oats .dot{margin:0 1px;font-weight:400}
-.cl-prenuvo{font-family:var(--font-body);font-weight:600;font-size:24px;letter-spacing:.01em}
-.cl-totalwine{font-family:var(--font-display);font-weight:700;font-size:16px;letter-spacing:.06em}
+.cl-prenuvo{font-family:var(--font-body);font-weight:600;font-size:48px;letter-spacing:.01em}
+.cl-totalwine{font-family:var(--font-display);font-weight:700;font-size:32px;letter-spacing:.06em}
 .cl-totalwine .amp{font-weight:400;font-style:italic;margin:0 1px}
+
+/* ---------- featured testimonial (light, sits directly under logo banner) ---------- */
+.testimonial{background:var(--paper-50);padding:8px 0 64px;border-bottom:1px solid var(--paper-200)}
+.testimonial .wrap{max-width:940px}
+.testimonial-in{display:flex;gap:26px;align-items:flex-start}
+.testimonial .so-ico{color:var(--signal-500);flex-shrink:0}
+.testimonial blockquote{margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(1.55rem,1.1rem+1.7vw,2.25rem);line-height:1.28;letter-spacing:-.02em;color:var(--ink-900);text-wrap:balance}
+.testimonial cite{display:block;margin-top:18px;font-style:normal;font-family:var(--font-mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--paper-600)}
+@media (max-width:560px){.testimonial-in{flex-direction:column;gap:16px}}
 
 /* ---------- channel cards (3-up grid) ---------- */
 .chan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
