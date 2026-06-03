@@ -5,14 +5,31 @@ import { Icon, type IconName } from "@/components/icons";
 import { Eyebrow } from "@/components/Eyebrow";
 import { Waveform } from "@/components/Waveform";
 import { Button } from "@/components/Button";
+import { submitLead } from "@/lib/hubspot";
 
 // Compact hero lead-capture form
 const HeroForm = () => {
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [data, setData] = useState({ name: "", company: "", email: "" });
   const set =
     (k: keyof typeof data) => (e: React.ChangeEvent<HTMLInputElement>) =>
       setData((d) => ({ ...d, [k]: e.target.value }));
+
+  const onSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitting(true);
+    setError(null);
+    try {
+      await submitLead(data);
+      setSent(true);
+    } catch {
+      setError("Something went wrong. Please try again, or email us directly.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   if (sent) {
     return (
@@ -35,13 +52,7 @@ const HeroForm = () => {
   }
 
   return (
-    <form
-      className="hero-form"
-      onSubmit={(e) => {
-        e.preventDefault();
-        setSent(true);
-      }}
-    >
+    <form className="hero-form" onSubmit={onSubmit}>
       <div className="hf-head">
         <span className="hf-tag">
           <Icon name="clock" size={14} /> Free 30-min strategy call
@@ -78,9 +89,10 @@ const HeroForm = () => {
           onChange={set("email")}
         />
       </div>
-      <Button variant="primary" icon="arrow" type="submit" full>
-        Book your audio strategy call
+      <Button variant="primary" icon="arrow" type="submit" full disabled={submitting}>
+        {submitting ? "Sending…" : "Book your audio strategy call"}
       </Button>
+      {error && <p className="hf-error">{error}</p>}
       <p className="hf-fine">
         We&apos;ll map your audio opportunity, model the upside, and show you how
         we&apos;d measure it before you spend a dollar.

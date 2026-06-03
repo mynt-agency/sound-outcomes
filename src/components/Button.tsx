@@ -15,6 +15,7 @@ type ButtonProps = {
   href?: string;
   type?: "button" | "submit" | "reset";
   full?: boolean;
+  disabled?: boolean;
   className?: string;
 };
 
@@ -30,6 +31,7 @@ export const Button = ({
   href,
   type,
   full,
+  disabled,
   className,
 }: ButtonProps) => {
   const cls =
@@ -55,7 +57,7 @@ export const Button = ({
   }
 
   return (
-    <button className={cls} type={type || "button"}>
+    <button className={cls} type={type || "button"} disabled={disabled}>
       {inner}
     </button>
   );
