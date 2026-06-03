@@ -29,6 +29,7 @@
 .hf-head h3{font-family:var(--font-display);font-weight:800;font-size:25px;letter-spacing:-.025em;margin:14px 0 0;color:var(--ink-900)}
 .hero-form .so-btn.full{justify-content:center;margin-top:4px}
 .hf-fine{font-size:13px;line-height:1.5;color:var(--paper-500);margin:0;text-align:left}
+.hf-error{font-size:13px;line-height:1.5;color:#b42318;background:#fef3f2;border:1px solid #fecdca;border-radius:var(--radius-sm);padding:10px 12px;margin:0;text-align:left}
 .hf-done{text-align:center;padding:26px 6px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:380px}
 .hf-done .badge{display:inline-flex;align-items:center;gap:8px;background:var(--lift-100);color:#0c6e44;font-family:var(--font-mono);font-weight:600;font-size:12px;padding:8px 14px;border-radius:var(--radius-pill);margin-bottom:18px}
 .hf-done h3{font-family:var(--font-display);font-weight:800;font-size:28px;letter-spacing:-.02em;margin:0 0 10px;color:var(--ink-900)}

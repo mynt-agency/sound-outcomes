@@ -16,6 +16,7 @@ type ButtonProps = {
   type?: "button" | "submit" | "reset";
   full?: boolean;
   className?: string;
+  disabled?: boolean;
 };
 
 /**
@@ -31,6 +32,7 @@ export const Button = ({
   type,
   full,
   className,
+  disabled,
 }: ButtonProps) => {
   const cls =
     "so-btn " + variant + (full ? " full" : "") + (className ? " " + className : "");
@@ -55,7 +57,7 @@ export const Button = ({
   }
 
   return (
-    <button className={cls} type={type || "button"}>
+    <button className={cls} type={type || "button"} disabled={disabled}>
       {inner}
     </button>
   );

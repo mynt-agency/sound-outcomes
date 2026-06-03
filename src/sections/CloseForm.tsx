@@ -5,9 +5,16 @@ import { Icon } from "@/components/icons";
 import { Eyebrow } from "@/components/Eyebrow";
 import { Waveform } from "@/components/Waveform";
 import { Button } from "@/components/Button";
+import { submitLead } from "@/lib/hubspot";
 
 export const CloseForm = () => {
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [data, setData] = useState({ name: "", company: "", email: "" });
+  const set =
+    (k: keyof typeof data) => (e: React.ChangeEvent<HTMLInputElement>) =>
+      setData((d) => ({ ...d, [k]: e.target.value }));
 
   return (
     <section className="sec close-sec" id="close">
@@ -50,9 +57,21 @@ export const CloseForm = () => {
           ) : (
             <form
               className="close-form"
-              onSubmit={(e) => {
+              onSubmit={async (e) => {
                 e.preventDefault();
-                setSent(true);
+                if (submitting) return;
+                setSubmitting(true);
+                setError(null);
+                try {
+                  await submitLead(data);
+                  setSent(true);
+                } catch {
+                  setError(
+                    "Something went wrong sending your request. Please try again, or email hello@soundoutcomes.com.",
+                  );
+                } finally {
+                  setSubmitting(false);
+                }
               }}
             >
               <div className="hf-head">
@@ -63,19 +82,48 @@ export const CloseForm = () => {
               </div>
               <div className="field">
                 <label>Full name</label>
-                <input type="text" required placeholder="Jordan Avery" />
+                <input
+                  type="text"
+                  required
+                  placeholder="Jordan Avery"
+                  value={data.name}
+                  onChange={set("name")}
+                />
               </div>
               <div className="field">
                 <label>Company</label>
-                <input type="text" required placeholder="Acme Brands" />
+                <input
+                  type="text"
+                  required
+                  placeholder="Acme Brands"
+                  value={data.company}
+                  onChange={set("company")}
+                />
               </div>
               <div className="field">
                 <label>Work email</label>
-                <input type="email" required placeholder="you@company.com" />
+                <input
+                  type="email"
+                  required
+                  placeholder="you@company.com"
+                  value={data.email}
+                  onChange={set("email")}
+                />
               </div>
-              <Button variant="primary" icon="arrow" type="submit" full>
-                Book your audio strategy call
+              <Button
+                variant="primary"
+                icon="arrow"
+                type="submit"
+                full
+                disabled={submitting}
+              >
+                {submitting ? "Sending…" : "Book your audio strategy call"}
               </Button>
+              {error && (
+                <p className="hf-error" role="alert">
+                  {error}
+                </p>
+              )}
               <p className="hf-fine">
                 We respond within one business day. Sound Outcomes is a performance
                 audio agency, powered by Mynt Agency.

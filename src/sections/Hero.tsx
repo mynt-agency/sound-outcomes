@@ -5,10 +5,13 @@ import { Icon, type IconName } from "@/components/icons";
 import { Eyebrow } from "@/components/Eyebrow";
 import { Waveform } from "@/components/Waveform";
 import { Button } from "@/components/Button";
+import { submitLead } from "@/lib/hubspot";
 
 // Compact hero lead-capture form
 const HeroForm = () => {
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [data, setData] = useState({ name: "", company: "", email: "" });
   const set =
     (k: keyof typeof data) => (e: React.ChangeEvent<HTMLInputElement>) =>
@@ -37,9 +40,21 @@ const HeroForm = () => {
   return (
     <form
       className="hero-form"
-      onSubmit={(e) => {
+      onSubmit={async (e) => {
         e.preventDefault();
-        setSent(true);
+        if (submitting) return;
+        setSubmitting(true);
+        setError(null);
+        try {
+          await submitLead(data);
+          setSent(true);
+        } catch {
+          setError(
+            "Something went wrong sending your request. Please try again, or email hello@soundoutcomes.com.",
+          );
+        } finally {
+          setSubmitting(false);
+        }
       }}
     >
       <div className="hf-head">
@@ -78,9 +93,20 @@ const HeroForm = () => {
           onChange={set("email")}
         />
       </div>
-      <Button variant="primary" icon="arrow" type="submit" full>
-        Book your audio strategy call
+      <Button
+        variant="primary"
+        icon="arrow"
+        type="submit"
+        full
+        disabled={submitting}
+      >
+        {submitting ? "Sending…" : "Book your audio strategy call"}
       </Button>
+      {error && (
+        <p className="hf-error" role="alert">
+          {error}
+        </p>
+      )}
       <p className="hf-fine">
         We&apos;ll map your audio opportunity, model the upside, and show you how
         we&apos;d measure it before you spend a dollar.
