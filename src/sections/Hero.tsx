@@ -1,15 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Icon, type IconName } from "@/components/icons";
 import { Eyebrow } from "@/components/Eyebrow";
-import { Waveform } from "@/components/Waveform";
 import { Button } from "@/components/Button";
 import { submitLead } from "@/lib/hubspot";
 
 // Compact hero lead-capture form
 const HeroForm = () => {
-  const [sent, setSent] = useState(false);
+  const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [data, setData] = useState({ name: "", company: "", email: "" });
@@ -23,33 +23,12 @@ const HeroForm = () => {
     setError(null);
     try {
       await submitLead(data);
-      setSent(true);
+      router.push("/thankyou");
     } catch {
       setError("Something went wrong. Please try again, or email us directly.");
-    } finally {
       setSubmitting(false);
     }
   };
-
-  if (sent) {
-    return (
-      <div className="hero-form" id="book-anchor">
-        <div className="hf-done">
-          <span className="badge">
-            <Icon name="check" size={14} /> Request received
-          </span>
-          <h3>You&apos;re booked in.</h3>
-          <p>
-            An audio strategist will reach out within one business day to
-            schedule your free 30-minute call.
-          </p>
-          <div style={{ marginTop: 18, display: "flex", justifyContent: "center" }}>
-            <Waveform bars={13} height={36} />
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <form className="hero-form" onSubmit={onSubmit}>

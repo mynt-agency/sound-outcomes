@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Icon } from "@/components/icons";
 import { Eyebrow } from "@/components/Eyebrow";
 import { Waveform } from "@/components/Waveform";
@@ -8,7 +9,7 @@ import { Button } from "@/components/Button";
 import { submitLead } from "@/lib/hubspot";
 
 export const CloseForm = () => {
-  const [sent, setSent] = useState(false);
+  const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [data, setData] = useState({ name: "", company: "", email: "" });
@@ -22,10 +23,9 @@ export const CloseForm = () => {
     setError(null);
     try {
       await submitLead(data);
-      setSent(true);
+      router.push("/thankyou");
     } catch {
       setError("Something went wrong. Please try again, or email us directly.");
-    } finally {
       setSubmitting(false);
     }
   };
@@ -57,19 +57,7 @@ export const CloseForm = () => {
               <Waveform bars={13} height={40} />
             </div>
           </div>
-          {sent ? (
-            <div className="close-form hf-done">
-              <span className="badge">
-                <Icon name="check" size={14} /> Request received
-              </span>
-              <h3>We&apos;re on it.</h3>
-              <p>
-                A strategist will reach out within one business day with your audio
-                plan and measurement scope.
-              </p>
-            </div>
-          ) : (
-            <form className="close-form" onSubmit={onSubmit}>
+          <form className="close-form" onSubmit={onSubmit}>
               <div className="hf-head">
                 <span className="hf-tag">
                   <Icon name="clock" size={14} /> Free 30-min strategy call
@@ -115,7 +103,6 @@ export const CloseForm = () => {
                 audio agency, powered by Mynt Agency.
               </p>
             </form>
-          )}
         </div>
       </div>
     </section>
