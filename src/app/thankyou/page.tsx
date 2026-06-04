@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Icon } from "@/components/icons";
 import { Waveform } from "@/components/Waveform";
 import { Button } from "@/components/Button";
+import { ThankYouConversions } from "@/components/ThankYouConversions";
 
 export const metadata: Metadata = {
   title: "Thank you | Sound Outcomes",
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
 export default function ThankYou() {
   return (
     <main className="thanks band-ink">
+      <ThankYouConversions />
       <div className="thanks-eq" aria-hidden="true">
         {Array.from({ length: 60 }).map((_, i) => (
           <span
