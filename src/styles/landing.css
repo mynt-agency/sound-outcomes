@@ -53,25 +53,23 @@
 /* ---------- client logo banner (light) — text sizes doubled ---------- */
 .logo-banner{background:var(--paper-50);padding:56px 0 60px}
 .lb-label{font-family:var(--font-mono);font-weight:500;font-size:16.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--paper-500);text-align:center;margin:0 0 40px}
-.lb-row{display:flex;align-items:center;justify-content:center;gap:44px 72px;flex-wrap:wrap}
-.client-logo{display:inline-flex;align-items:center;color:var(--paper-400);transition:color var(--dur-base) var(--ease-out)}
-.client-logo:hover{color:var(--ink-800)}
-.cl-mark{line-height:1;white-space:nowrap}
-.cl-death{font-family:var(--font-display);font-weight:900;font-size:36px;letter-spacing:.02em;text-transform:uppercase}
-.cl-laser{font-family:var(--font-display);font-weight:500;font-size:46px;letter-spacing:-.02em}
-.cl-laser b{font-weight:800}
-.cl-oats{font-family:var(--font-body);font-weight:700;font-size:44px;letter-spacing:-.03em}
-.cl-oats .dot{margin:0 1px;font-weight:400}
-.cl-prenuvo{font-family:var(--font-body);font-weight:600;font-size:48px;letter-spacing:.01em}
-.cl-totalwine{font-family:var(--font-display);font-weight:700;font-size:32px;letter-spacing:.06em}
-.cl-totalwine .amp{font-weight:400;font-style:italic;margin:0 1px}
+.lb-row{display:flex;align-items:center;justify-content:center;gap:36px 56px;flex-wrap:wrap}
+.client-logo{display:inline-flex;align-items:center}
+.client-logo img{display:block;width:auto;object-fit:contain;filter:grayscale(1);opacity:.72;mix-blend-mode:multiply;transition:filter var(--dur-base) var(--ease-out),opacity var(--dur-base) var(--ease-out)}
+.client-logo:hover img{filter:grayscale(0);opacity:1}
+/* per-brand heights to optically balance differing aspect ratios + padding */
+.cl-death img{height:38px}
+.cl-laser img{height:60px}
+.cl-oats img{height:46px}
+.cl-prenuvo img{height:30px}
+.cl-totalwine img{height:30px}
 
 /* ---------- featured testimonial (light, sits directly under logo banner) ---------- */
 .testimonial{background:var(--paper-50);padding:32px 0 72px;border-bottom:1px solid var(--paper-200)}
 .testimonial .wrap{max-width:940px}
 .testimonial-in{display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px}
 .testimonial .so-ico{color:var(--signal-500);flex-shrink:0}
-.testimonial blockquote{margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(1.33rem,0.21rem + 3.92vw,3.15rem);line-height:1.2;letter-spacing:-.02em;color:var(--ink-900);text-wrap:balance}
+.testimonial blockquote{margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(0.95rem,0.15rem + 2.74vw,2.2rem);line-height:1.25;letter-spacing:-.015em;color:var(--ink-900);text-wrap:balance}
 .testimonial cite{display:block;margin-top:24px;font-style:normal;font-family:var(--font-mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--paper-600)}
 
 /* ---------- channel cards (3-up grid) ---------- */
@@ -161,11 +159,11 @@
   .proof-grid .so-stat:nth-child(n+2){border-top:1px solid var(--ink-700)}
   .mid-cta{padding:24px}
   .hero-form{padding:26px 22px}
-  /* scale placeholder logo wordmarks so they fit without overflowing */
-  .lb-row{gap:24px 30px}
-  .cl-death{font-size:24px}
-  .cl-laser{font-size:30px}
-  .cl-oats{font-size:28px}
-  .cl-prenuvo{font-size:31px}
-  .cl-totalwine{font-size:21px}
+  /* scale logos down so all fit comfortably on small screens */
+  .lb-row{gap:22px 34px}
+  .cl-death img{height:30px}
+  .cl-laser img{height:46px}
+  .cl-oats img{height:36px}
+  .cl-prenuvo img{height:24px}
+  .cl-totalwine img{height:24px}
 }
