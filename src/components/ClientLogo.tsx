@@ -1,32 +1,28 @@
-import type { ReactNode } from "react";
-
 /**
- * Client logo wordmarks — typographic placeholders for real brand vectors,
- * rendered monochrome for a clean "trusted by" wall. Swap with real SVG
- * lockups when licensed files are available.
+ * Client logos for the "trusted by" wall. Each brand's real logo is
+ * height-normalized via a per-brand class (see .cl-* rules in landing.css)
+ * to optically balance their differing aspect ratios.
  */
-const MARKS: Record<string, ReactNode> = {
-  "Liquid Death": <span className="cl-mark cl-death">LIQUID&nbsp;DEATH</span>,
-  LaserAway: (
-    <span className="cl-mark cl-laser">
-      Laser<b>Away</b>
-    </span>
-  ),
-  "Oats Overnight": (
-    <span className="cl-mark cl-oats">
-      oats<span className="dot">·</span>overnight
-    </span>
-  ),
-  Prenuvo: <span className="cl-mark cl-prenuvo">prenuvo</span>,
-  "Total Wine & More": (
-    <span className="cl-mark cl-totalwine">
-      TOTAL WINE <span className="amp">&amp;</span> MORE
-    </span>
-  ),
+type Logo = { src: string; cls: string };
+
+const LOGOS: Record<string, Logo> = {
+  "Liquid Death": { src: "/assets/Liquid-Death-Emblem.png", cls: "cl-death" },
+  LaserAway: { src: "/assets/laseraway_580_x_580_vlf.webp", cls: "cl-laser" },
+  "Oats Overnight": { src: "/assets/oats.png", cls: "cl-oats" },
+  Prenuvo: { src: "/assets/Prenuvo-sRGB-Wordmark-Teal-L.png", cls: "cl-prenuvo" },
+  "Total Wine & More": {
+    src: "/assets/Total_Wine__More_logo-1024x227.webp",
+    cls: "cl-totalwine",
+  },
 };
 
-export const ClientLogo = ({ name }: { name: string }) => (
-  <span className="client-logo" title={name}>
-    {MARKS[name]}
-  </span>
-);
+export const ClientLogo = ({ name }: { name: string }) => {
+  const logo = LOGOS[name];
+  if (!logo) return null;
+  return (
+    <span className={`client-logo ${logo.cls}`} title={name}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={logo.src} alt={`${name} logo`} loading="lazy" />
+    </span>
+  );
+};
