@@ -68,10 +68,10 @@
 
 /* ---------- featured testimonial (light, sits directly under logo banner) ---------- */
 .testimonial{background:var(--paper-50);padding:32px 0 72px;border-bottom:1px solid var(--paper-200)}
-.testimonial .wrap{max-width:940px}
-.testimonial-in{display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px}
+.testimonial .wrap{max-width:1040px}
+.testimonial-in{display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px}
 .testimonial .so-ico{color:var(--signal-500);flex-shrink:0}
-.testimonial blockquote{margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(3.1rem,2.2rem+3.4vw,4.5rem);line-height:1.16;letter-spacing:-.025em;color:var(--ink-900);text-wrap:balance}
+.testimonial blockquote{margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(2.6rem,0.6rem + 11.2vw,9rem);line-height:1.12;letter-spacing:-.03em;color:var(--ink-900);text-wrap:balance}
 .testimonial cite{display:block;margin-top:24px;font-style:normal;font-family:var(--font-mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--paper-600)}
 
 /* ---------- channel cards (3-up grid) ---------- */
