@@ -55,14 +55,8 @@
 .lb-label{font-family:var(--font-mono);font-weight:500;font-size:16.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--paper-500);text-align:center;margin:0 0 40px}
 .lb-row{display:flex;align-items:center;justify-content:center;gap:36px 56px;flex-wrap:wrap}
 .client-logo{display:inline-flex;align-items:center}
-.client-logo img{display:block;width:auto;object-fit:contain;filter:grayscale(1);opacity:.72;mix-blend-mode:multiply;transition:filter var(--dur-base) var(--ease-out),opacity var(--dur-base) var(--ease-out)}
+.client-logo img{display:block;width:auto;height:36px;object-fit:contain;filter:grayscale(1);opacity:.72;mix-blend-mode:multiply;transition:filter var(--dur-base) var(--ease-out),opacity var(--dur-base) var(--ease-out)}
 .client-logo:hover img{filter:grayscale(0);opacity:1}
-/* per-brand heights to optically balance differing aspect ratios + padding */
-.cl-death img{height:38px}
-.cl-laser img{height:60px}
-.cl-oats img{height:46px}
-.cl-prenuvo img{height:30px}
-.cl-totalwine img{height:30px}
 
 /* ---------- featured testimonial (light, sits directly under logo banner) ---------- */
 .testimonial{background:var(--paper-50);padding:32px 0 72px;border-bottom:1px solid var(--paper-200)}
@@ -161,9 +155,5 @@
   .hero-form{padding:26px 22px}
   /* scale logos down so all fit comfortably on small screens */
   .lb-row{gap:22px 34px}
-  .cl-death img{height:30px}
-  .cl-laser img{height:46px}
-  .cl-oats img{height:36px}
-  .cl-prenuvo img{height:24px}
-  .cl-totalwine img{height:24px}
+  .client-logo img{height:28px}
 }
