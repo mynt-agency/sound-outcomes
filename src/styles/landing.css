@@ -122,6 +122,22 @@
 .close-form .so-btn.full{justify-content:center;margin-top:4px}
 .close-form.hf-done{min-height:0;padding:40px 6px}
 
+/* ---------- thank-you page (dark, standalone) ---------- */
+.thanks{position:relative;overflow:hidden;min-height:100vh;display:flex;align-items:center;justify-content:center}
+.thanks-eq{position:absolute;inset:auto 0 0 0;height:60%;display:flex;align-items:flex-end;gap:6px;padding:0 24px;opacity:.10;pointer-events:none;z-index:0}
+.thanks-eq span{flex:1;border-radius:6px 6px 0 0;background:var(--signal-400);animation:eqb 2.4s var(--ease-in-out) infinite}
+.thanks-eq span:nth-child(7n){background:var(--amber-400)}
+@media (prefers-reduced-motion:reduce){.thanks-eq span{animation:none}}
+.thanks-in{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:72px 0;max-width:680px}
+.thanks-logo{margin-bottom:44px}
+.thanks-badge{display:inline-flex;align-items:center;gap:8px;background:var(--lift-100);color:#0c6e44;font-family:var(--font-mono);font-weight:600;font-size:12px;letter-spacing:.04em;padding:8px 15px;border-radius:var(--radius-pill)}
+.thanks-badge .so-ico{color:#0c6e44}
+.thanks-in h1{font-family:var(--font-display);font-weight:800;font-size:clamp(2.2rem,1.4rem+2.6vw,3.4rem);line-height:1.05;letter-spacing:-.03em;color:var(--paper-50);margin:22px 0 0;text-wrap:balance}
+.thanks-lead{font-size:18px;line-height:1.55;color:var(--ink-300);max-width:48ch;margin:20px 0 0}
+.thanks-wave{margin-top:36px}
+.thanks-cta{margin-top:36px}
+.thanks-fine{font-family:var(--font-mono);font-size:12px;letter-spacing:.04em;color:var(--ink-400);margin:32px 0 0}
+
 /* ---------- responsive ---------- */
 @media (max-width:960px){
   .hero-grid{grid-template-columns:1fr;gap:36px}

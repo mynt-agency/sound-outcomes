@@ -65,8 +65,11 @@ npm run start
 
 ## Notes
 
-- The two lead-capture forms (hero + close) currently render a client-side
-  confirmation state on submit. Wire them to your CRM/email endpoint when ready.
+- The two lead-capture forms (hero + close) submit to HubSpot via the Forms
+  Submissions API (`src/lib/hubspot.ts`) and, on success, redirect to the
+  `/thankyou` page (`src/app/thankyou`). Portal ID and form GUID default to the
+  production values but can be overridden with `NEXT_PUBLIC_HUBSPOT_PORTAL_ID`
+  and `NEXT_PUBLIC_HUBSPOT_FORM_GUID`.
 - The five client logos (Liquid Death, LaserAway, Oats Overnight, Prenuvo, Total
   Wine & More) are typographic placeholders. Swap in the real licensed SVG
   lockups in `src/components/ClientLogo.tsx`.
