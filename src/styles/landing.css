@@ -71,7 +71,7 @@
 .testimonial .wrap{max-width:940px}
 .testimonial-in{display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px}
 .testimonial .so-ico{color:var(--signal-500);flex-shrink:0}
-.testimonial blockquote{margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(1.9rem,0.3rem + 5.6vw,4.5rem);line-height:1.16;letter-spacing:-.025em;color:var(--ink-900);text-wrap:balance}
+.testimonial blockquote{margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(1.33rem,0.21rem + 3.92vw,3.15rem);line-height:1.2;letter-spacing:-.02em;color:var(--ink-900);text-wrap:balance}
 .testimonial cite{display:block;margin-top:24px;font-style:normal;font-family:var(--font-mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--paper-600)}
 
 /* ---------- channel cards (3-up grid) ---------- */
