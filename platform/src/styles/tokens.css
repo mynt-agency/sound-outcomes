@@ -1,0 +1,232 @@
+/* ============================================================
+   SOUND OUTCOMES — Core Color & Type Tokens (Platform)
+   Self-serve audio advertising · a Mynt Agency brand
+   ------------------------------------------------------------
+   Self-contained design tokens for the platform marketing site.
+   Shares the Sound Outcomes brand identity with the agency site
+   but lives in an entirely separate codebase.
+   ============================================================ */
+
+:root {
+  /* ============ BRAND COLOR — raw scales ============ */
+
+  /* Ink — the studio-console base. A deep, slightly-blue near-black. */
+  --ink-950: #05070E;
+  --ink-900: #080C16;
+  --ink-850: #0C1120;
+  --ink-800: #11182B;
+  --ink-700: #19223A;
+  --ink-600: #26324F;
+  --ink-500: #3A496B;
+  --ink-400: #5C6B8C;
+  --ink-300: #8C99B5;
+
+  /* Signal — primary action / electric premium blue. */
+  --signal-50:  #ECF1FF;
+  --signal-100: #D6E0FF;
+  --signal-200: #AEC2FF;
+  --signal-300: #7E9CFF;
+  --signal-400: #4E72FF;
+  --signal-500: #2C53FF;
+  --signal-600: #1B3FEB;
+  --signal-700: #1431C2;
+  --signal-800: #142B96;
+  --signal-900: #16296F;
+
+  /* Amber — accent / "outcomes, value." Warm gold, used sparingly. */
+  --amber-50:  #FFF6E6;
+  --amber-100: #FFE9C2;
+  --amber-200: #FFD485;
+  --amber-300: #FFBE47;
+  --amber-400: #FBA91C;
+  --amber-500: #E8930A;
+  --amber-600: #C2760A;
+
+  /* Paper — warm neutral scale for light surfaces & text. */
+  --paper-0:   #FFFFFF;
+  --paper-50:  #FBF9F4;
+  --paper-100: #F4F1E9;
+  --paper-200: #E9E4D8;
+  --paper-300: #D8D2C4;
+  --paper-400: #B4AD9C;
+  --paper-500: #8B8576;
+  --paper-600: #635E52;
+  --paper-700: #45413a;
+
+  /* Semantic data colors. */
+  --lift-500:  #18A86B;
+  --lift-100:  #D6F2E5;
+  --drop-500:  #E5484D;
+  --channel-podcast:  #2C53FF;
+  --channel-streaming:#7C5CFF;
+  --channel-radio:    #FBA91C;
+  --channel-ctv:      #18A86B;
+  --channel-other:    #8C99B5;
+
+  /* ============ SEMANTIC TOKENS (theme: light) ============ */
+  --bg:            var(--paper-50);
+  --bg-raised:     var(--paper-0);
+  --bg-sunken:     var(--paper-100);
+  --surface-dark:  var(--ink-900);
+
+  --fg:            var(--ink-900);
+  --fg-muted:      var(--paper-600);
+  --fg-subtle:     var(--paper-500);
+  --fg-on-dark:    var(--paper-50);
+
+  --border:        var(--paper-200);
+  --border-strong: var(--paper-300);
+  --divider:       var(--paper-100);
+
+  /* Platform leads with the electric Signal blue for primary actions
+     (a "click to launch" product feel); amber stays the value accent. */
+  --primary:       var(--signal-500);
+  --primary-hover: var(--signal-600);
+  --primary-press: var(--signal-700);
+  --on-primary:    #FFFFFF;
+  --accent:        var(--amber-400);
+  --accent-hover:  var(--amber-500);
+  --on-accent:     var(--ink-900);
+
+  --focus-ring:    var(--signal-300);
+
+  /* ============ TYPE — families ============ */
+  --font-display: var(--font-archivo), "Archivo", "Archivo Expanded", system-ui, sans-serif;
+  --font-body:    var(--font-figtree), "Figtree", system-ui, -apple-system, sans-serif;
+  --font-mono:    var(--font-figtree), "Figtree", system-ui, -apple-system, sans-serif;
+  --font-code:    ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* ============ TYPE — fluid scale (1.250 major-third) ============ */
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-md:   1.125rem;
+  --text-lg:   1.375rem;
+  --text-xl:   1.75rem;
+  --text-2xl:  2.25rem;
+  --text-3xl:  3rem;
+  --text-4xl:  clamp(2.75rem, 1.5rem + 5vw, 4.5rem);
+  --text-5xl:  clamp(3.5rem, 1rem + 9vw, 7rem);
+
+  --leading-tight: 0.98;
+  --leading-snug:  1.12;
+  --leading-body:  1.55;
+  --tracking-tight: -0.03em;
+  --tracking-flush: -0.01em;
+  --tracking-wide:  0.02em;
+  --tracking-label: 0.14em;
+
+  /* ============ SPACING (4pt base) ============ */
+  --space-1: 4px;   --space-2: 8px;   --space-3: 12px;  --space-4: 16px;
+  --space-5: 24px;  --space-6: 32px;  --space-7: 48px;  --space-8: 64px;
+  --space-9: 96px;  --space-10: 128px;
+
+  /* ============ RADII ============ */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+
+  /* ============ SHADOWS / ELEVATION ============ */
+  --shadow-sm:  0 1px 2px rgba(8,12,22,0.06), 0 1px 1px rgba(8,12,22,0.04);
+  --shadow-md:  0 4px 12px rgba(8,12,22,0.08), 0 2px 4px rgba(8,12,22,0.05);
+  --shadow-lg:  0 18px 40px rgba(8,12,22,0.12), 0 6px 14px rgba(8,12,22,0.06);
+  --shadow-primary: 0 10px 26px rgba(44,83,255,0.30);
+
+  /* ============ MOTION ============ */
+  --ease-out:   cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out:cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast:   140ms;
+  --dur-base:   220ms;
+  --dur-slow:   420ms;
+}
+
+/* ============ ELEMENT BASELINES ============ */
+.so-display {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-stretch: expanded;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  text-wrap: balance;
+}
+
+h1, .so-h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--text-4xl);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  text-wrap: balance;
+  margin: 0;
+}
+
+h2, .so-h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--text-3xl);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+  text-wrap: balance;
+  margin: 0;
+}
+
+h3, .so-h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-2xl);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-flush);
+  margin: 0;
+}
+
+h4, .so-h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-xl);
+  line-height: 1.2;
+  letter-spacing: var(--tracking-flush);
+  margin: 0;
+}
+
+p, .so-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  color: var(--fg);
+  text-wrap: pretty;
+  margin: 0;
+}
+
+.so-lead {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--text-md);
+  line-height: 1.5;
+  color: var(--fg-muted);
+}
+
+.so-eyebrow,
+.so-kicker {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+  color: var(--fg-subtle);
+}
+
+.so-metric {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+code, .so-mono {
+  font-family: var(--font-code);
+  font-size: 0.92em;
+}
