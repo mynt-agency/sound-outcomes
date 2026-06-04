@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Archivo, Figtree } from "next/font/google";
+import Script from "next/script";
 
 import "@/styles/colors_and_type.css";
 import "@/styles/kit.css";
@@ -42,7 +43,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${archivo.variable} ${figtree.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        {/* Google tag (gtag.js) — Google Ads, AW-18211014839 */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18211014839"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18211014839');
+          `}
+        </Script>
+      </body>
     </html>
   );
 }
