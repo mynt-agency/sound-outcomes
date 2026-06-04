@@ -52,7 +52,7 @@
 
 /* ---------- client logo banner (light) — text sizes doubled ---------- */
 .logo-banner{background:var(--paper-50);padding:56px 0 60px}
-.lb-label{font-family:var(--font-mono);font-weight:500;font-size:22px;letter-spacing:.16em;text-transform:uppercase;color:var(--paper-500);text-align:center;margin:0 0 40px}
+.lb-label{font-family:var(--font-mono);font-weight:500;font-size:16.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--paper-500);text-align:center;margin:0 0 40px}
 .lb-row{display:flex;align-items:center;justify-content:center;gap:44px 72px;flex-wrap:wrap}
 .client-logo{display:inline-flex;align-items:center;color:var(--paper-400);transition:color var(--dur-base) var(--ease-out)}
 .client-logo:hover{color:var(--ink-800)}
@@ -67,13 +67,12 @@
 .cl-totalwine .amp{font-weight:400;font-style:italic;margin:0 1px}
 
 /* ---------- featured testimonial (light, sits directly under logo banner) ---------- */
-.testimonial{background:var(--paper-50);padding:8px 0 64px;border-bottom:1px solid var(--paper-200)}
+.testimonial{background:var(--paper-50);padding:32px 0 72px;border-bottom:1px solid var(--paper-200)}
 .testimonial .wrap{max-width:940px}
-.testimonial-in{display:flex;gap:26px;align-items:flex-start}
+.testimonial-in{display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px}
 .testimonial .so-ico{color:var(--signal-500);flex-shrink:0}
-.testimonial blockquote{margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(1.55rem,1.1rem+1.7vw,2.25rem);line-height:1.28;letter-spacing:-.02em;color:var(--ink-900);text-wrap:balance}
-.testimonial cite{display:block;margin-top:18px;font-style:normal;font-family:var(--font-mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--paper-600)}
-@media (max-width:560px){.testimonial-in{flex-direction:column;gap:16px}}
+.testimonial blockquote{margin:0;font-family:var(--font-display);font-weight:700;font-size:clamp(3.1rem,2.2rem+3.4vw,4.5rem);line-height:1.16;letter-spacing:-.025em;color:var(--ink-900);text-wrap:balance}
+.testimonial cite{display:block;margin-top:24px;font-style:normal;font-family:var(--font-mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--paper-600)}
 
 /* ---------- channel cards (3-up grid) ---------- */
 .chan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
@@ -152,9 +151,21 @@
   .nav-links{display:none}
 }
 @media (max-width:560px){
+  .wrap{padding:0 20px}
+  /* nav: show the mark only so the CTA can't overlap the wordmark */
+  .nav-in{height:62px}
+  .nav .so-wm{display:none}
+  .nav-cta .so-btn{padding:11px 16px;font-size:14px}
   .proof-grid{grid-template-columns:1fr}
   .proof-grid .so-stat:nth-child(2n){border-left:0}
   .proof-grid .so-stat:nth-child(n+2){border-top:1px solid var(--ink-700)}
   .mid-cta{padding:24px}
   .hero-form{padding:26px 22px}
+  /* scale placeholder logo wordmarks so they fit without overflowing */
+  .lb-row{gap:24px 30px}
+  .cl-death{font-size:24px}
+  .cl-laser{font-size:30px}
+  .cl-oats{font-size:28px}
+  .cl-prenuvo{font-size:31px}
+  .cl-totalwine{font-size:21px}
 }

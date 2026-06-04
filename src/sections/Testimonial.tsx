@@ -5,7 +5,7 @@ export const Testimonial = () => (
   <section className="testimonial">
     <div className="wrap">
       <div className="testimonial-in">
-        <Icon name="quote" size={40} />
+        <Icon name="quote" size={56} />
         <div>
           <blockquote>
             &quot;With spot-level, real-time pixel tracking and rigorous advanced
