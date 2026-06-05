@@ -57,6 +57,12 @@
 .client-logo{display:inline-flex;align-items:center}
 .client-logo img{display:block;width:auto;height:36px;object-fit:contain;filter:grayscale(1);opacity:.72;mix-blend-mode:multiply;transition:filter var(--dur-base) var(--ease-out),opacity var(--dur-base) var(--ease-out)}
 .client-logo:hover img{filter:grayscale(0);opacity:1}
+/* per-brand heights: scaled up from the 36px base (Total Wine) to compensate
+   for the whitespace/padding baked into each source file */
+.cl-death img{height:72px}
+.cl-laser img{height:108px}
+.cl-oats img{height:72px}
+.cl-prenuvo img{height:72px}
 
 /* ---------- featured testimonial (light, sits directly under logo banner) ---------- */
 .testimonial{background:var(--paper-50);padding:32px 0 72px;border-bottom:1px solid var(--paper-200)}
@@ -156,4 +162,8 @@
   /* scale logos down so all fit comfortably on small screens */
   .lb-row{gap:22px 34px}
   .client-logo img{height:28px}
+  .cl-death img{height:56px}
+  .cl-laser img{height:84px}
+  .cl-oats img{height:56px}
+  .cl-prenuvo img{height:56px}
 }
