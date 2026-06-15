@@ -1,34 +1,13 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { Icon } from "@/components/icons";
 import { Eyebrow } from "@/components/Eyebrow";
 import { Waveform } from "@/components/Waveform";
 import { Button } from "@/components/Button";
-import { submitLead } from "@/lib/hubspot";
+import { useLeadForm, BUDGET_OPTIONS } from "@/lib/useLeadForm";
 
 export const CloseForm = () => {
-  const router = useRouter();
-  const [submitting, setSubmitting] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [data, setData] = useState({ name: "", company: "", email: "" });
-  const set =
-    (k: keyof typeof data) => (e: React.ChangeEvent<HTMLInputElement>) =>
-      setData((d) => ({ ...d, [k]: e.target.value }));
-
-  const onSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitting(true);
-    setError(null);
-    try {
-      await submitLead(data);
-      router.push("/thankyou");
-    } catch {
-      setError("Something went wrong. Please try again, or email us directly.");
-      setSubmitting(false);
-    }
-  };
+  const { data, set, onSubmit, submitting, error } = useLeadForm();
 
   return (
     <section className="sec close-sec" id="close">
@@ -85,6 +64,16 @@ export const CloseForm = () => {
                 />
               </div>
               <div className="field">
+                <label>Role / Title</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="Head of Growth"
+                  value={data.jobtitle}
+                  onChange={set("jobtitle")}
+                />
+              </div>
+              <div className="field">
                 <label>Work email</label>
                 <input
                   type="email"
@@ -92,6 +81,30 @@ export const CloseForm = () => {
                   placeholder="you@company.com"
                   value={data.email}
                   onChange={set("email")}
+                />
+              </div>
+              <div className="field">
+                <label>Monthly marketing budget</label>
+                <select required value={data.budget} onChange={set("budget")}>
+                  <option value="" disabled>
+                    Select a range
+                  </option>
+                  {BUDGET_OPTIONS.map((o) => (
+                    <option key={o.value} value={o.value}>
+                      {o.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              {/* Honeypot — hidden from humans; bots that fill it are silently rejected. */}
+              <div className="hp-field" aria-hidden="true">
+                <label>Website</label>
+                <input
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={data.website}
+                  onChange={set("website")}
                 />
               </div>
               <Button variant="primary" icon="arrow" type="submit" full disabled={submitting}>
