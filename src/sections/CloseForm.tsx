@@ -4,7 +4,7 @@ import { Icon } from "@/components/icons";
 import { Eyebrow } from "@/components/Eyebrow";
 import { Waveform } from "@/components/Waveform";
 import { Button } from "@/components/Button";
-import { useLeadForm, BUDGET_OPTIONS } from "@/lib/useLeadForm";
+import { useLeadForm } from "@/lib/useLeadForm";
 
 export const CloseForm = () => {
   const { data, set, onSubmit, submitting, error } = useLeadForm();
@@ -64,17 +64,7 @@ export const CloseForm = () => {
                 />
               </div>
               <div className="field">
-                <label>Role / Title</label>
-                <input
-                  type="text"
-                  required
-                  placeholder="Head of Growth"
-                  value={data.jobtitle}
-                  onChange={set("jobtitle")}
-                />
-              </div>
-              <div className="field">
-                <label>Work email</label>
+                <label>Email</label>
                 <input
                   type="email"
                   required
@@ -82,19 +72,6 @@ export const CloseForm = () => {
                   value={data.email}
                   onChange={set("email")}
                 />
-              </div>
-              <div className="field">
-                <label>Monthly marketing budget</label>
-                <select required value={data.budget} onChange={set("budget")}>
-                  <option value="" disabled>
-                    Select a range
-                  </option>
-                  {BUDGET_OPTIONS.map((o) => (
-                    <option key={o.value} value={o.value}>
-                      {o.label}
-                    </option>
-                  ))}
-                </select>
               </div>
               {/* Honeypot — hidden from humans; bots that fill it are silently rejected. */}
               <div className="hp-field" aria-hidden="true">
