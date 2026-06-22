@@ -16,18 +16,12 @@ export type LeadInput = {
   name: string;
   company: string;
   email: string;
-  /** HubSpot `jobtitle` */
-  jobtitle: string;
-  /** HubSpot `monthly_budget__projected_` (must be one of that property's option values) */
-  budget: string;
 };
 
 export async function submitLead({
   name,
   company,
   email,
-  jobtitle,
-  budget,
 }: LeadInput): Promise<void> {
   // HubSpot's default contact has firstname/lastname; split the single name field.
   const trimmed = name.trim();
@@ -41,8 +35,6 @@ export async function submitLead({
       { name: "firstname", value: firstname },
       { name: "lastname", value: lastname },
       { name: "company", value: company },
-      { name: "jobtitle", value: jobtitle },
-      { name: "monthly_budget__projected_", value: budget },
     ],
     context: {
       pageUri: typeof window !== "undefined" ? window.location.href : undefined,
